@@ -1,0 +1,36 @@
+name: Publish Package to npmjs
+on:
+  release:
+    types: [created]
+jobs:
+  build:
+    permissions:
+      packages: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          always-auth: true
+          cache: "yarn"
+          node-version: "16.x"
+          registry-url: "https://registry.npmjs.org"
+
+      - run: yarn install --frozen-lockfile
+      - run: yarn build
+
+      # Publish NPM
+      - run: yarn publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.YARN_TOKEN }}
+
+      # Publish GHPR
+      # - uses: actions/setup-node@v3
+      #   with:
+      #     registry-url: "https://npm.pkg.github.com"
+      #     always-auth: true
+      #     node-version: "16.x"
+
+      - run: yarn publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
