@@ -1,0 +1,40 @@
+{
+  "name": "canvas-api-ts",
+  "version": "1.0.0",
+  "author": "Sebastian Pietschner <sebastian@sebasptsch.dev>",
+  "license": "MIT",
+  "repository": "sebasptsch/CanvasApi",
+  "devDependencies": {
+    "@apidevtools/swagger-parser": "^10.1.0",
+    "openapi-typescript-codegen": "^0.23.0",
+    "tsup": "^6.6.3",
+    "typescript": "^4.9.5"
+  },
+  "scripts": {
+    "build": "tsup",
+    "generate": "node ./scripts/generate.mjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "maintainers": [
+    {
+      "email": "sebastian@sebasptsch.dev",
+      "name": "Sebastian Pietschner",
+      "url": "https://sebasptsch.dev"
+    }
+  ]
+}
