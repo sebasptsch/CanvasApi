@@ -31,6 +31,6 @@ jobs:
       #     always-auth: true
       #     node-version: "16.x"
 
-      - run: yarn publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - run: yarn publish
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
