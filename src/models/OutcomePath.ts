@@ -2,16 +2,15 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import type { OutcomePathPart } from './OutcomePathPart';
+import type { OutcomePathPart } from "./OutcomePathPart";
 
 /**
  * The full path to an outcome
  */
 export type OutcomePath = {
-    /**
-     * A unique identifier for this outcome
-     */
-    id?: number;
-    parts?: OutcomePathPart;
+  /**
+   * A unique identifier for this outcome
+   */
+  id?: number;
+  parts?: OutcomePathPart;
 };
-

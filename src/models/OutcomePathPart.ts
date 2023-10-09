@@ -6,9 +6,8 @@
  * An outcome or outcome group
  */
 export type OutcomePathPart = {
-    /**
-     * The title of the outcome or outcome group
-     */
-    name?: string;
+  /**
+   * The title of the outcome or outcome group
+   */
+  name?: string;
 };
-

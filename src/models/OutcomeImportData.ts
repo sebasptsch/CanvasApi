@@ -3,9 +3,8 @@
 /* eslint-disable */
 
 export type OutcomeImportData = {
-    /**
-     * The type of outcome import
-     */
-    import_type?: string;
+  /**
+   * The type of outcome import
+   */
+  import_type?: string;
 };
-
