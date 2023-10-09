@@ -7,20 +7,29 @@ jobs:
     permissions:
       packages: write
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: ["18.x"]
     steps:
       - uses: actions/checkout@v3
+
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        with:
+          version: 8
+
       - uses: actions/setup-node@v3
         with:
           always-auth: true
-          cache: "yarn"
-          node-version: "16.x"
+          cache: "pnpm"
+          node-version: ${{ matrix.node-version }}
           registry-url: "https://registry.npmjs.org"
 
-      - run: yarn install --frozen-lockfile
-      - run: yarn build
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
 
       # Publish NPM
-      - run: yarn publish
+      - run: pnpm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.YARN_TOKEN }}
 

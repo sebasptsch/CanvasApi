@@ -7,7 +7,7 @@
   "devDependencies": {
     "@apidevtools/swagger-parser": "^10.1.0",
     "openapi-typescript-codegen": "^0.23.0",
-    "tsup": "^6.6.3",
+    "tsup": "^6.7.0",
     "typescript": "^4.9.5"
   },
   "scripts": {
